@@ -103,6 +103,12 @@ run_step "11 Paged-items audit (silent empty-result bugs)" \
 run_step "12 Fields-mask audit (silent missing-data bugs)" \
   python3 -I "$REVIEW/12-Fields-Mask-Audit/audit_fields_masks.py" "$GAM_SRC" "$CACHE"
 
+# The wiki folder sits next to src in a GAM checkout; skip quietly if absent.
+if [ -d "$GAM_SRC/../wiki" ]; then
+  run_step "13 Wiki link audit" \
+    python3 -I "$REVIEW/13-Wiki-Link-Audit/audit_wiki_links.py" "$GAM_SRC/../wiki"
+fi
+
 echo
 echo "Finished.  Worst exit code: $worst   (0 clean, 1 findings, 2+ crash)"
 echo "Reports: $OUT"

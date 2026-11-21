@@ -23,6 +23,7 @@ file explains how the tools work and how to run them again.
 | `09-Reports/` | Saved results: the 11-21-2026 baseline run and the candidate-API outline. |
 | `10-Upstream-Issue-Drafts/` | Four ready-to-post GitHub issues for GAM-team/GAM, plus `LINKS.md` with one-tap pre-filled links. |
 | `11-Paged-Items-Audit/` | Finds list calls that would silently return nothing because a response field name is wrong. |
+| `13-Wiki-Link-Audit/` | Finds wiki links to pages that do not exist, and (optionally) documented commands GAM does not know. |
 | `12-Fields-Mask-Audit/` | Checks every literal `fields=` string against Google's response schema (silent missing-data bugs). |
 
 Every `.py` file has a long comment at the top explaining its purpose and
@@ -242,6 +243,18 @@ Calls pass `fields='users(primaryEmail,name(fullName))'` to say which parts of
 the answer to return. A wrong name or wrong syntax (a dot instead of `/` or
 parentheses) can make data silently go missing. 805 strings are built at run
 time and cannot be checked; the tool says how many it skipped.
+
+### Tool 13 - wiki links and documented commands
+
+```
+python -I 13-Wiki-Link-Audit\audit_wiki_links.py C:\GAM-source\GAM\wiki
+C:\gamvenv\Scripts\python.exe 13-Wiki-Link-Audit\audit_wiki_links.py C:\GAM-source\GAM\wiki C:\GAM-source\GAM\src
+```
+
+The first form lists links to wiki pages that do not exist. The second (needs
+the virtual environment's Python) also compares the commands written in the
+wiki's syntax blocks with GAM's command tables; expect noise, see the top of the
+script. On 11-21-2026 it found two real typos.
 
 ### Tool 08 - outline of any Google API (for planning new GAM commands)
 

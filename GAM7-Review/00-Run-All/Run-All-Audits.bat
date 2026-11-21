@@ -120,6 +120,15 @@ python -I "%REVIEW%\12-Fields-Mask-Audit\audit_fields_masks.py" "%GAM_SRC%" "%CA
 call :track
 
 echo.
+echo === 13 Wiki link audit
+if exist "%GAM_SRC%\..\wiki\" (
+  python -I "%REVIEW%\13-Wiki-Link-Audit\audit_wiki_links.py" "%GAM_SRC%\..\wiki"
+  call :track
+) else (
+  echo     wiki folder not found next to src - skipped
+)
+
+echo.
 echo Finished.  Worst exit code: %WORST%   (0 clean, 1 findings, 2+ crash)
 echo Reports: %OUT%
 exit /b %WORST%

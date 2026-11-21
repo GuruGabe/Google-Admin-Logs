@@ -138,6 +138,15 @@ Mistakes I made and corrected on the way (do not repeat):
   RETRY_API_SERVICE_NOT_AVAILABLE:False, API_CALLS_TRIES_LIMIT:3,
   BAIL_ON_INTERNAL_ERROR_TRIES:2, DEBUG_LEVEL:0}).
 
+## Session 2c (11-21-2026, later still)
+
+* The USER MERGED PR #1 on their own fork (GuruGabe/GAM main = 265011f) containing
+  patches 0001+0002.  Patch 0003 is still only on claude/gam7-audit-fixes.
+  Upstream GAM-team/GAM main was still 30449fc when checked (all 3 patches apply).
+* New: tool 13 (wiki links + documented-command check) and fork branch
+  claude/gam7-wiki-fixes (docs only; 2 typos + 9 links).  pr-6-wiki-fixes.md has PR text.
+* Never repeat personal names seen in git logs in outward text.
+
 ## TODO next (priority order)
 
 1. Ask the user (when they are back, around 11-30-2026):
