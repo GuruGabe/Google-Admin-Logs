@@ -1,0 +1,208 @@
+{
+ "checked": 177,
+ "unknown_scopes": [
+  {
+   "table": "_CLIENT_SCOPES",
+   "api": "cloudchannel",
+   "entry": "Cloud Channel API",
+   "scope": "https://www.googleapis.com/auth/apps.order.readonly"
+  }
+ ],
+ "offered_not_requested": {
+  "accesscontextmanager v1": [
+   "https://www.googleapis.com/auth/cloud-platform"
+  ],
+  "analyticsadmin v1beta": [
+   "https://www.googleapis.com/auth/analytics.edit"
+  ],
+  "calendar-json v3": [
+   "https://www.googleapis.com/auth/calendar.acls",
+   "https://www.googleapis.com/auth/calendar.acls.readonly",
+   "https://www.googleapis.com/auth/calendar.app.created",
+   "https://www.googleapis.com/auth/calendar.calendarlist",
+   "https://www.googleapis.com/auth/calendar.calendarlist.readonly",
+   "https://www.googleapis.com/auth/calendar.calendars",
+   "https://www.googleapis.com/auth/calendar.calendars.readonly",
+   "https://www.googleapis.com/auth/calendar.events",
+   "https://www.googleapis.com/auth/calendar.events.freebusy",
+   "https://www.googleapis.com/auth/calendar.events.owned",
+   "https://www.googleapis.com/auth/calendar.events.owned.readonly",
+   "https://www.googleapis.com/auth/calendar.events.public.readonly",
+   "https://www.googleapis.com/auth/calendar.events.readonly",
+   "https://www.googleapis.com/auth/calendar.freebusy",
+   "https://www.googleapis.com/auth/calendar.settings",
+   "https://www.googleapis.com/auth/calendar.settings.readonly"
+  ],
+  "chat v1": [
+   "https://www.googleapis.com/auth/chat.app.all.memberships.readonly",
+   "https://www.googleapis.com/auth/chat.app.all.messages.readonly",
+   "https://www.googleapis.com/auth/chat.app.all.spaces.readonly",
+   "https://www.googleapis.com/auth/chat.app.delete",
+   "https://www.googleapis.com/auth/chat.app.memberships",
+   "https://www.googleapis.com/auth/chat.app.memberships.readonly",
+   "https://www.googleapis.com/auth/chat.app.messages.readonly",
+   "https://www.googleapis.com/auth/chat.app.spaces",
+   "https://www.googleapis.com/auth/chat.app.spaces.create",
+   "https://www.googleapis.com/auth/chat.app.spaces.readonly",
+   "https://www.googleapis.com/auth/chat.bot",
+   "https://www.googleapis.com/auth/chat.import",
+   "https://www.googleapis.com/auth/chat.memberships.app",
+   "https://www.googleapis.com/auth/chat.messages.create",
+   "https://www.googleapis.com/auth/chat.messages.reactions",
+   "https://www.googleapis.com/auth/chat.messages.reactions.create",
+   "https://www.googleapis.com/auth/chat.messages.reactions.readonly",
+   "https://www.googleapis.com/auth/chat.spaces.create",
+   "https://www.googleapis.com/auth/chat.spaces.pins",
+   "https://www.googleapis.com/auth/chat.spaces.pins.readonly",
+   "https://www.googleapis.com/auth/chat.users.readstate",
+   "https://www.googleapis.com/auth/chat.users.readstate.readonly",
+   "https://www.googleapis.com/auth/chat.users.spacesettings"
+  ],
+  "classroom v1": [
+   "https://www.googleapis.com/auth/classroom.addons.student",
+   "https://www.googleapis.com/auth/classroom.addons.teacher",
+   "https://www.googleapis.com/auth/classroom.coursework.me",
+   "https://www.googleapis.com/auth/classroom.coursework.me.readonly",
+   "https://www.googleapis.com/auth/classroom.guardianlinks.me.readonly",
+   "https://www.googleapis.com/auth/classroom.push-notifications",
+   "https://www.googleapis.com/auth/classroom.student-submissions.me.readonly",
+   "https://www.googleapis.com/auth/classroom.student-submissions.students.readonly"
+  ],
+  "chromemanagement v1": [
+   "https://www.googleapis.com/auth/chrome.management.securityinsights",
+   "https://www.googleapis.com/auth/chrome.management.securityinsights.readonly"
+  ],
+  "cloudchannel v1": [
+   "https://www.googleapis.com/auth/apps.reports.usage.readonly"
+  ],
+  "cloudidentity v1": [
+   "https://www.googleapis.com/auth/cloud-identity.devices.lookup",
+   "https://www.googleapis.com/auth/cloud-platform"
+  ],
+  "cloudidentity v1beta1": [
+   "https://www.googleapis.com/auth/cloud-identity.devices.lookup",
+   "https://www.googleapis.com/auth/cloud-platform"
+  ],
+  "cloudresourcemanager v3": [
+   "https://www.googleapis.com/auth/cloud-platform",
+   "https://www.googleapis.com/auth/cloud-platform.read-only"
+  ],
+  "cloudresourcemanager v1": [
+   "https://www.googleapis.com/auth/cloud-platform",
+   "https://www.googleapis.com/auth/cloud-platform.read-only"
+  ],
+  "admin directory_v1": [
+   "https://www.googleapis.com/auth/admin.directory.device.mobile.action",
+   "https://www.googleapis.com/auth/admin.directory.group.member",
+   "https://www.googleapis.com/auth/admin.directory.group.member.readonly",
+   "https://www.googleapis.com/auth/admin.directory.user.alias",
+   "https://www.googleapis.com/auth/admin.directory.user.alias.readonly",
+   "https://www.googleapis.com/auth/cloud-platform"
+  ],
+  "drive v2": [
+   "https://www.googleapis.com/auth/drive.appdata",
+   "https://www.googleapis.com/auth/drive.apps.readonly",
+   "https://www.googleapis.com/auth/drive.meet.readonly",
+   "https://www.googleapis.com/auth/drive.metadata",
+   "https://www.googleapis.com/auth/drive.metadata.readonly",
+   "https://www.googleapis.com/auth/drive.photos.readonly",
+   "https://www.googleapis.com/auth/drive.scripts"
+  ],
+  "drive v3": [
+   "https://www.googleapis.com/auth/drive.appdata",
+   "https://www.googleapis.com/auth/drive.apps.readonly",
+   "https://www.googleapis.com/auth/drive.meet.readonly",
+   "https://www.googleapis.com/auth/drive.metadata",
+   "https://www.googleapis.com/auth/drive.metadata.readonly",
+   "https://www.googleapis.com/auth/drive.photos.readonly",
+   "https://www.googleapis.com/auth/drive.scripts"
+  ],
+  "driveactivity v2": [
+   "https://www.googleapis.com/auth/drive.activity.readonly"
+  ],
+  "forms v1": [
+   "https://www.googleapis.com/auth/forms.body.readonly"
+  ],
+  "gmail v1": [
+   "https://www.googleapis.com/auth/gmail.addons.current.action.compose",
+   "https://www.googleapis.com/auth/gmail.addons.current.message.action",
+   "https://www.googleapis.com/auth/gmail.addons.current.message.metadata",
+   "https://www.googleapis.com/auth/gmail.addons.current.message.readonly",
+   "https://www.googleapis.com/auth/gmail.compose",
+   "https://www.googleapis.com/auth/gmail.drafts",
+   "https://www.googleapis.com/auth/gmail.drafts.create",
+   "https://www.googleapis.com/auth/gmail.drafts.readonly",
+   "https://www.googleapis.com/auth/gmail.insert",
+   "https://www.googleapis.com/auth/gmail.labels",
+   "https://www.googleapis.com/auth/gmail.labels.create",
+   "https://www.googleapis.com/auth/gmail.labels.readonly",
+   "https://www.googleapis.com/auth/gmail.messages",
+   "https://www.googleapis.com/auth/gmail.messages.delete",
+   "https://www.googleapis.com/auth/gmail.messages.modify",
+   "https://www.googleapis.com/auth/gmail.messages.readonly",
+   "https://www.googleapis.com/auth/gmail.metadata",
+   "https://www.googleapis.com/auth/gmail.send.self",
+   "https://www.googleapis.com/auth/gmail.settings.filters",
+   "https://www.googleapis.com/auth/gmail.settings.filters.readonly"
+  ],
+  "iam v1": [
+   "https://www.googleapis.com/auth/cloud-platform"
+  ],
+  "iamcredentials v1": [
+   "https://www.googleapis.com/auth/cloud-platform"
+  ],
+  "orgpolicy v2": [
+   "https://www.googleapis.com/auth/cloud-platform",
+   "https://www.googleapis.com/auth/organizationpolicy",
+   "https://www.googleapis.com/auth/organizationpolicy.readonly"
+  ],
+  "people v1": [
+   "https://www.googleapis.com/auth/user.addresses.read",
+   "https://www.googleapis.com/auth/user.birthday.read",
+   "https://www.googleapis.com/auth/user.emails.read",
+   "https://www.googleapis.com/auth/user.gender.read",
+   "https://www.googleapis.com/auth/user.organization.read",
+   "https://www.googleapis.com/auth/user.phonenumbers.read"
+  ],
+  "pubsub v1": [
+   "https://www.googleapis.com/auth/cloud-platform"
+  ],
+  "searchconsole v1": [
+   "https://www.googleapis.com/auth/webmasters"
+  ],
+  "servicemanagement v1": [
+   "https://www.googleapis.com/auth/cloud-platform",
+   "https://www.googleapis.com/auth/cloud-platform.read-only",
+   "https://www.googleapis.com/auth/service.management",
+   "https://www.googleapis.com/auth/service.management.readonly"
+  ],
+  "serviceusage v1": [
+   "https://www.googleapis.com/auth/cloud-platform",
+   "https://www.googleapis.com/auth/cloud-platform.read-only",
+   "https://www.googleapis.com/auth/service.management"
+  ],
+  "siteVerification v1": [
+   "https://www.googleapis.com/auth/siteverification.verify_only"
+  ],
+  "storage v1": [
+   "https://www.googleapis.com/auth/cloud-platform",
+   "https://www.googleapis.com/auth/cloud-platform.read-only",
+   "https://www.googleapis.com/auth/devstorage.full_control"
+  ],
+  "tagmanager v2": [
+   "https://www.googleapis.com/auth/tagmanager.delete.containers",
+   "https://www.googleapis.com/auth/tagmanager.edit.containers",
+   "https://www.googleapis.com/auth/tagmanager.edit.containerversions",
+   "https://www.googleapis.com/auth/tagmanager.manage.accounts",
+   "https://www.googleapis.com/auth/tagmanager.publish"
+  ],
+  "youtube v3": [
+   "https://www.googleapis.com/auth/youtube",
+   "https://www.googleapis.com/auth/youtube.channel-memberships.creator",
+   "https://www.googleapis.com/auth/youtube.force-ssl",
+   "https://www.googleapis.com/auth/youtube.upload",
+   "https://www.googleapis.com/auth/youtubepartner",
+   "https://www.googleapis.com/auth/youtubepartner-channel-audit"
+  ]
+ }
+}

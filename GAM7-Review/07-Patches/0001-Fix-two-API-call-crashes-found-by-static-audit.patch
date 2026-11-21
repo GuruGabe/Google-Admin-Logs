@@ -1,0 +1,44 @@
+From ee7a3cd2fc5d39fcb12baf6a96ad389577b6c28c Mon Sep 17 00:00:00 2001
+From: GAM7-Review <noreply@example.invalid>
+Date: Sat, 21 Nov 2026 04:16:53 +0000
+Subject: [PATCH 1/2] Fix two API-call crashes found by static audit
+
+doUpdateVaultHold passed 'throwReas=' (typo for throwReasons) so Google's
+client rejected the call with TypeError: Got an unexpected keyword argument
+and 'gam update vaulthold' could never update a hold. It also meant the
+intended NOT_FOUND/BAD_REQUEST/FORBIDDEN handling was never active.
+
+_batchRemoveItemsFromCourse's retry path called Classroom delete with
+body=rbody. students/teachers/aliases/topics/announcements delete take
+courseId plus userId/alias/id and no body, so a retry after a quota or
+service-unavailable error aborted with an unexpected keyword argument
+error instead of retrying. Pass the identifier as a keyword instead.
+---
+ src/gam/__init__.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/gam/__init__.py b/src/gam/__init__.py
+index 426ad0a..7c5ce45 100755
+--- a/src/gam/__init__.py
++++ b/src/gam/__init__.py
+@@ -45808,7 +45808,7 @@ def doUpdateVaultHold():
+   if body:
+     try:
+       hold = callGAPI(v.matters().holds(), 'update',
+-                      throwReas=[GAPI.NOT_FOUND, GAPI.BAD_REQUEST, GAPI.FORBIDDEN, GAPI.PERMISSION_DENIED, GAPI.INVALID_ARGUMENT],
++                      throwReasons=[GAPI.NOT_FOUND, GAPI.BAD_REQUEST, GAPI.FORBIDDEN, GAPI.PERMISSION_DENIED, GAPI.INVALID_ARGUMENT],
+                       matterId=matterId, holdId=holdId, body=body)
+       entityActionPerformed([Ent.VAULT_MATTER, matterNameId, Ent.VAULT_HOLD, holdNameId])
+     except (GAPI.notFound, GAPI.badRequest, GAPI.forbidden, GAPI.permissionDenied, GAPI.invalidArgument) as e:
+@@ -53534,7 +53534,7 @@ def _batchRemoveItemsFromCourse(croom, courseId, i, count, removeItems, removeTy
+                  throwReasons=[GAPI.NOT_FOUND, GAPI.FORBIDDEN, GAPI.PERMISSION_DENIED,
+                                GAPI.QUOTA_EXCEEDED, GAPI.SERVICE_NOT_AVAILABLE, GAPI.FAILED_PRECONDITION],
+                  retryReasons=[GAPI.NOT_FOUND, GAPI.SERVICE_NOT_AVAILABLE], triesLimit=0 if reason != GAPI.NOT_FOUND else 3,
+-                 courseId=addCourseIdScope(ri[RI_ENTITY]), body=rbody, fields='')
++                 courseId=addCourseIdScope(ri[RI_ENTITY]), fields='', **rbody)
+       except GAPI.notFound:
+         entityActionFailedWarning([Ent.COURSE, ri[RI_ENTITY], removeType, riItem], Msg.DOES_NOT_EXIST, int(ri[RI_J]), int(ri[RI_JCOUNT]))
+       except GAPI.forbidden:
+-- 
+2.43.0
+

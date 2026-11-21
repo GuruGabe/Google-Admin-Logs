@@ -1,0 +1,7 @@
+# Downloaded copies of Google's API descriptions: large, public, and
+# re-creatable at any time with 01-Discovery-Fetch/fetch_discovery.py.
+discovery_cache/
+**/discovery_cache/
+# Python byte-code caches created when the tools run.
+__pycache__/
+*.pyc

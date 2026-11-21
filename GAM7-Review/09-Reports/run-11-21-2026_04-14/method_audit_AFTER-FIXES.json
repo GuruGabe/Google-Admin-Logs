@@ -1,0 +1,1020 @@
+{
+ "bad_parameters": [],
+ "dynamic_method_needs_manual_review": [
+  {
+   "line": 6079,
+   "method_variable": "function",
+   "scope": "callGAPIpages",
+   "service": "service"
+  },
+  {
+   "line": 6110,
+   "method_variable": "function",
+   "scope": "yieldGAPIpages",
+   "service": "service"
+  },
+  {
+   "line": 6144,
+   "method_variable": "function",
+   "scope": "callGAPIitems",
+   "service": "service"
+  },
+  {
+   "line": 24118,
+   "method_variable": "function",
+   "scope": "_processPeopleContactPhotos",
+   "service": "people.people()"
+  },
+  {
+   "line": 24154,
+   "method_variable": "function",
+   "scope": "_processPeopleContactPhotos",
+   "service": "people.people()"
+  },
+  {
+   "line": 27782,
+   "method_variable": "function",
+   "scope": "updateChatAvailability",
+   "service": "chat.users().availability()"
+  },
+  {
+   "line": 32262,
+   "method_variable": "action",
+   "scope": "_performCIDeviceAction",
+   "service": "ci.devices()"
+  },
+  {
+   "line": 32459,
+   "method_variable": "action",
+   "scope": "doSyncCIDevices",
+   "service": "ci.devices()"
+  },
+  {
+   "line": 32802,
+   "method_variable": "action",
+   "scope": "_performCIDeviceUserAction",
+   "service": "ci.devices().deviceUsers()"
+  },
+  {
+   "line": 34056,
+   "method_variable": "function",
+   "scope": "doPrintShowChromeDeviceCounts",
+   "service": "cm.customers().reports()"
+  },
+  {
+   "line": 42116,
+   "method_variable": "function",
+   "scope": "_processCalendarACLs",
+   "service": "cal.acl()"
+  },
+  {
+   "line": 46520,
+   "method_variable": "action",
+   "scope": "doActionVaultMatter",
+   "service": "v.matters()"
+  },
+  {
+   "line": 54681,
+   "method_variable": "function",
+   "scope": "acceptDeleteClassroomInvitations",
+   "service": "ucroom.invitations()"
+  },
+  {
+   "line": 55325,
+   "method_variable": "function",
+   "scope": "doProcessCourseStudentGroupMembers",
+   "service": "ocroom.courses().studentGroups().studentGroupMembers()"
+  },
+  {
+   "line": 55903,
+   "method_variable": "function",
+   "scope": "_processCalendarList",
+   "service": "cal.calendarList()"
+  },
+  {
+   "line": 56007,
+   "method_variable": "function",
+   "scope": "_modifyRemoveCalendars",
+   "service": "cal.calendars()"
+  },
+  {
+   "line": 66528,
+   "method_variable": "function",
+   "scope": "deleteDriveFile",
+   "service": "drive.files()"
+  },
+  {
+   "line": 73831,
+   "method_variable": "function",
+   "scope": "_setShowProfile",
+   "service": "cd.users()"
+  },
+  {
+   "line": 78867,
+   "method_variable": "function",
+   "scope": "_processForwardingAddress",
+   "service": "gmail.users().settings().forwardingAddresses()"
+  },
+  {
+   "line": 79241,
+   "method_variable": "function",
+   "scope": "_processSendAs",
+   "service": "gmail.users().settings().sendAs()"
+  },
+  {
+   "line": 79915,
+   "method_variable": "function",
+   "scope": "createUpdateCSEIdentity",
+   "service": "gmail.users().settings().cse().identities()"
+  },
+  {
+   "line": 79948,
+   "method_variable": "function",
+   "scope": "processCSEIdentity",
+   "service": "gmail.users().settings().cse().identities()"
+  },
+  {
+   "line": 80104,
+   "method_variable": "function",
+   "scope": "processCSEKeyPair",
+   "service": "gmail.users().settings().cse().keypairs()"
+  }
+ ],
+ "methods_used_by_gam": {
+  "admin datatransfer_v1": [
+   "applications.list",
+   "transfers.get",
+   "transfers.insert",
+   "transfers.list"
+  ],
+  "admin directory_v1": [
+   "asps.delete",
+   "asps.list",
+   "chromeosdevices.get",
+   "chromeosdevices.list",
+   "chromeosdevices.moveDevicesToOu",
+   "chromeosdevices.patch",
+   "chromeosdevices.update",
+   "customer/devices/chromeos.batchChangeStatus",
+   "customer/devices/chromeos.issueCommand",
+   "customer/devices/chromeos/commands.get",
+   "customers.get",
+   "customers.patch",
+   "customers.update",
+   "customers/chrome/printers.create",
+   "customers/chrome/printers.list",
+   "customers/chrome/printers.listPrinterModels",
+   "domainAliases.delete",
+   "domainAliases.get",
+   "domainAliases.insert",
+   "domainAliases.list",
+   "domains.delete",
+   "domains.get",
+   "domains.insert",
+   "domains.list",
+   "groups.delete",
+   "groups.get",
+   "groups.insert",
+   "groups.list",
+   "groups.update",
+   "groups/aliases.delete",
+   "groups/aliases.insert",
+   "groups/aliases.list",
+   "members.delete",
+   "members.get",
+   "members.insert",
+   "members.list",
+   "members.patch",
+   "mobiledevices.list",
+   "orgunits.delete",
+   "orgunits.get",
+   "orgunits.insert",
+   "orgunits.list",
+   "orgunits.update",
+   "privileges.list",
+   "resources/buildings.delete",
+   "resources/buildings.get",
+   "resources/buildings.insert",
+   "resources/buildings.list",
+   "resources/buildings.patch",
+   "resources/calendars.delete",
+   "resources/calendars.get",
+   "resources/calendars.insert",
+   "resources/calendars.list",
+   "resources/calendars.patch",
+   "resources/features.delete",
+   "resources/features.insert",
+   "resources/features.list",
+   "resources/features.rename",
+   "roleAssignments.delete",
+   "roleAssignments.insert",
+   "roleAssignments.list",
+   "roles.delete",
+   "roles.get",
+   "roles.insert",
+   "roles.list",
+   "roles.patch",
+   "schemas.delete",
+   "schemas.get",
+   "schemas.insert",
+   "schemas.list",
+   "schemas.update",
+   "tokens.delete",
+   "tokens.get",
+   "tokens.list",
+   "twoStepVerification.turnOff",
+   "users.createGuest",
+   "users.delete",
+   "users.get",
+   "users.insert",
+   "users.list",
+   "users.signOut",
+   "users.undelete",
+   "users.update",
+   "users/aliases.delete",
+   "users/aliases.insert",
+   "users/aliases.list",
+   "users/photos.delete",
+   "users/photos.get",
+   "users/photos.update",
+   "verificationCodes.generate",
+   "verificationCodes.invalidate",
+   "verificationCodes.list"
+  ],
+  "admin reports_v1": [
+   "activities.list",
+   "customerUsageReports.get",
+   "userUsageReport.get"
+  ],
+  "alertcenter v1beta1": [
+   "alerts.delete",
+   "alerts.get",
+   "alerts.list",
+   "alerts.undelete",
+   "alerts/feedback.create",
+   "alerts/feedback.list",
+   "v1beta1.getSettings",
+   "v1beta1.updateSettings"
+  ],
+  "analyticsadmin v1beta": [
+   "accountSummaries.list",
+   "accounts.list",
+   "properties.list",
+   "properties/dataStreams.list"
+  ],
+  "calendar-json v3": [
+   "acl.get",
+   "acl.list",
+   "calendars.get",
+   "calendars.patch",
+   "events.delete",
+   "events.insert",
+   "events.list"
+  ],
+  "chat v1": [
+   "customEmojis.create",
+   "customEmojis.delete",
+   "customEmojis.get",
+   "customEmojis.list",
+   "spaces.get",
+   "spaces.list",
+   "spaces.search",
+   "spaces.setup",
+   "spaces/members.list",
+   "spaces/messages.create",
+   "spaces/messages.delete",
+   "spaces/messages.get",
+   "spaces/messages.list",
+   "spaces/messages.patch",
+   "spaces/messages.search",
+   "spaces/spaceEvents.get",
+   "spaces/spaceEvents.list",
+   "users/availability.get",
+   "users/availability.patch",
+   "users/sections.create",
+   "users/sections.delete",
+   "users/sections.list",
+   "users/sections.patch",
+   "users/sections.position",
+   "users/sections/items.list",
+   "users/sections/items.move"
+  ],
+  "chromemanagement v1": [
+   "customers/apps/android.get",
+   "customers/apps/chrome.get",
+   "customers/apps/web.get",
+   "customers/chromeBrowsers.delete",
+   "customers/chromeBrowsers.get",
+   "customers/chromeBrowsers.list",
+   "customers/chromeBrowsers.move",
+   "customers/chromeBrowsers.patch",
+   "customers/enrollmentTokens.create",
+   "customers/enrollmentTokens.get",
+   "customers/enrollmentTokens.list",
+   "customers/enrollmentTokens.revoke",
+   "customers/profiles.delete",
+   "customers/profiles.get",
+   "customers/profiles.list",
+   "customers/profiles/commands.get",
+   "customers/reports.countChromeDevicesThatNeedAttention",
+   "customers/reports.countChromeVersions",
+   "customers/reports.countInstalledApps",
+   "customers/reports.findInstalledAppDevices",
+   "customers/telemetry/devices.list"
+  ],
+  "chromepolicy v1": [
+   "customers/policies.resolve",
+   "customers/policies/networks.defineNetwork",
+   "customers/policies/networks.removeNetwork",
+   "customers/policySchemas.get",
+   "customers/policySchemas.list",
+   "media.upload"
+  ],
+  "classroom v1": [
+   "courses.create",
+   "courses.delete",
+   "courses.get",
+   "courses.list",
+   "courses.patch",
+   "courses/aliases.create",
+   "courses/aliases.list",
+   "courses/announcements.create",
+   "courses/announcements.get",
+   "courses/announcements.list",
+   "courses/courseWork.get",
+   "courses/courseWork.list",
+   "courses/courseWork/studentSubmissions.get",
+   "courses/courseWork/studentSubmissions.list",
+   "courses/courseWorkMaterials.get",
+   "courses/courseWorkMaterials.list",
+   "courses/students.create",
+   "courses/teachers.create",
+   "courses/topics.create",
+   "courses/topics.get",
+   "courses/topics.list",
+   "invitations.list",
+   "userProfiles.get",
+   "userProfiles/guardianInvitations.create",
+   "userProfiles/guardianInvitations.list",
+   "userProfiles/guardianInvitations.patch",
+   "userProfiles/guardians.delete",
+   "userProfiles/guardians.list"
+  ],
+  "cloudchannel v1": [
+   "accounts/customers.list",
+   "accounts/customers/entitlements.list",
+   "accounts/offers.list",
+   "products.list",
+   "products/skus.list"
+  ],
+  "cloudidentity v1": [
+   "allowlistedDomains.create",
+   "allowlistedDomains.delete",
+   "allowlistedDomains.get",
+   "allowlistedDomains.list",
+   "customers/userinvitations.isInvitableUser",
+   "customers/userinvitations.list",
+   "groups.delete",
+   "groups.get",
+   "groups.getSecuritySettings",
+   "groups.list",
+   "groups.lookup",
+   "groups.patch",
+   "groups.updateSecuritySettings",
+   "groups/memberships.create",
+   "groups/memberships.delete",
+   "groups/memberships.get",
+   "groups/memberships.getMembershipGraph",
+   "groups/memberships.list",
+   "groups/memberships.modifyMembershipRoles",
+   "groups/memberships.searchTransitiveGroups",
+   "groups/memberships.searchTransitiveMemberships",
+   "inboundOidcSsoProfiles.get",
+   "inboundOidcSsoProfiles.list",
+   "inboundSamlSsoProfiles.get",
+   "inboundSamlSsoProfiles.list",
+   "inboundSamlSsoProfiles/idpCredentials.delete",
+   "inboundSamlSsoProfiles/idpCredentials.get",
+   "inboundSamlSsoProfiles/idpCredentials.list",
+   "inboundSsoAssignments.create",
+   "inboundSsoAssignments.delete",
+   "inboundSsoAssignments.get",
+   "inboundSsoAssignments.list",
+   "inboundSsoAssignments.patch",
+   "policies.create",
+   "policies.delete",
+   "policies.get",
+   "policies.list",
+   "policies.patch"
+  ],
+  "cloudidentity v1beta1": [
+   "orgUnits/memberships.list",
+   "orgUnits/memberships.move"
+  ],
+  "cloudresourcemanager v3": [
+   "organizations.search",
+   "projects.get",
+   "projects.search"
+  ],
+  "contactdelegation v1": [
+   "delegates.create",
+   "delegates.delete",
+   "delegates.list"
+  ],
+  "docs v1": [
+   "documents.batchUpdate",
+   "documents.get"
+  ],
+  "drive v2": [
+   "permissions.getIdForEmail"
+  ],
+  "drive v3": [
+   "about.get",
+   "changes.getStartPageToken",
+   "drives.create",
+   "drives.get",
+   "drives.hide",
+   "drives.list",
+   "drives.update",
+   "files.create",
+   "files.delete",
+   "files.emptyTrash",
+   "files.get",
+   "files.list",
+   "files.update",
+   "permissions.create",
+   "permissions.delete",
+   "permissions.list",
+   "permissions.update"
+  ],
+  "driveactivity v2": [
+   "activity.query"
+  ],
+  "forms v1": [
+   "forms.batchUpdate",
+   "forms.get",
+   "forms.setPublishSettings",
+   "forms/responses.list"
+  ],
+  "gmail v1": [
+   "users.getProfile",
+   "users/drafts.create",
+   "users/labels.create",
+   "users/labels.delete",
+   "users/labels.get",
+   "users/labels.list",
+   "users/labels.patch",
+   "users/messages.get",
+   "users/messages.import",
+   "users/messages.insert",
+   "users/messages.list",
+   "users/messages.modify",
+   "users/messages.send",
+   "users/settings.getAutoForwarding",
+   "users/settings.getImap",
+   "users/settings.getLanguage",
+   "users/settings.getPop",
+   "users/settings.getVacation",
+   "users/settings.updateAutoForwarding",
+   "users/settings.updateImap",
+   "users/settings.updateLanguage",
+   "users/settings.updatePop",
+   "users/settings.updateVacation",
+   "users/settings/cse/identities.create",
+   "users/settings/cse/identities.list",
+   "users/settings/cse/keypairs.create",
+   "users/settings/cse/keypairs.list",
+   "users/settings/delegates.create",
+   "users/settings/delegates.list",
+   "users/settings/filters.create",
+   "users/settings/filters.list",
+   "users/settings/forwardingAddresses.list",
+   "users/settings/sendAs.get",
+   "users/settings/sendAs.list",
+   "users/settings/sendAs/smimeInfo.delete",
+   "users/settings/sendAs/smimeInfo.insert",
+   "users/settings/sendAs/smimeInfo.list",
+   "users/settings/sendAs/smimeInfo.setDefault"
+  ],
+  "groupsmigration v1": [
+   "archive.insert"
+  ],
+  "groupssettings v1": [
+   "groups.get",
+   "groups.update"
+  ],
+  "iam v1": [
+   "projects/serviceAccounts.create",
+   "projects/serviceAccounts.delete",
+   "projects/serviceAccounts.list",
+   "projects/serviceAccounts.setIamPolicy",
+   "projects/serviceAccounts/keys.create",
+   "projects/serviceAccounts/keys.delete",
+   "projects/serviceAccounts/keys.get",
+   "projects/serviceAccounts/keys.list",
+   "projects/serviceAccounts/keys.upload"
+  ],
+  "iamcredentials v1": [
+   "projects/serviceAccounts.signJwt"
+  ],
+  "keep v1": [
+   "notes.create",
+   "notes.get",
+   "notes.list",
+   "notes/permissions.batchCreate"
+  ],
+  "licensing v1": [
+   "licenseAssignments.get",
+   "licenseAssignments.listForProduct",
+   "licenseAssignments.listForProductAndSku"
+  ],
+  "meet v2": [
+   "conferenceRecords.list",
+   "conferenceRecords/participants.list",
+   "conferenceRecords/recordings.list",
+   "conferenceRecords/transcripts.list",
+   "spaces.create",
+   "spaces.endActiveConference",
+   "spaces.get",
+   "spaces.patch"
+  ],
+  "mybusinessaccountmanagement v1": [
+   "accounts.list"
+  ],
+  "oauth2 v2": [
+   ".tokeninfo"
+  ],
+  "people v1": [
+   "contactGroups.create",
+   "contactGroups.delete",
+   "contactGroups.get",
+   "contactGroups.list",
+   "contactGroups.update",
+   "otherContacts.copyOtherContactToMyContactsGroup",
+   "otherContacts.list",
+   "otherContacts.search",
+   "people.createContact",
+   "people.deleteContact",
+   "people.get",
+   "people.listDirectoryPeople",
+   "people.searchContacts",
+   "people.searchDirectoryPeople",
+   "people.updateContact",
+   "people/connections.list"
+  ],
+  "pubsub v1": [
+   "projects/subscriptions.acknowledge",
+   "projects/subscriptions.create",
+   "projects/subscriptions.pull",
+   "projects/topics.create",
+   "projects/topics.list",
+   "projects/topics.setIamPolicy",
+   "projects/topics/subscriptions.list"
+  ],
+  "reseller v1": [
+   "customers.get",
+   "customers.insert",
+   "customers.patch",
+   "subscriptions.activate",
+   "subscriptions.changePlan",
+   "subscriptions.changeRenewalSettings",
+   "subscriptions.changeSeats",
+   "subscriptions.delete",
+   "subscriptions.get",
+   "subscriptions.insert",
+   "subscriptions.list",
+   "subscriptions.startPaidService",
+   "subscriptions.suspend"
+  ],
+  "searchconsole v1": [
+   "sites.list"
+  ],
+  "serviceaccountlookup v1": [
+   "serviceaccounts.lookup"
+  ],
+  "serviceusage v1": [
+   "services.enable",
+   "services.list"
+  ],
+  "sheets v4": [
+   "spreadsheets.batchUpdate",
+   "spreadsheets.create",
+   "spreadsheets.get"
+  ],
+  "siteVerification v1": [
+   "webResource.getToken",
+   "webResource.insert",
+   "webResource.list"
+  ],
+  "storage v1": [
+   "objects.get",
+   "objects.list",
+   "objects.rewrite"
+  ],
+  "tasks v1": [
+   "tasklists.insert",
+   "tasklists.list",
+   "tasks.insert",
+   "tasks.list"
+  ],
+  "vault v1": [
+   "matters.addPermissions",
+   "matters.count",
+   "matters.create",
+   "matters.get",
+   "matters.list",
+   "matters.removePermissions",
+   "matters.update",
+   "matters/exports.create",
+   "matters/exports.delete",
+   "matters/exports.get",
+   "matters/exports.list",
+   "matters/holds.create",
+   "matters/holds.delete",
+   "matters/holds.get",
+   "matters/holds.list",
+   "matters/holds.update",
+   "matters/holds/accounts.create",
+   "matters/holds/accounts.delete",
+   "matters/savedQueries.create",
+   "matters/savedQueries.delete",
+   "matters/savedQueries.get",
+   "matters/savedQueries.list",
+   "operations.get"
+  ],
+  "versionhistory v1": [
+   "platforms.list",
+   "platforms/channels.list",
+   "platforms/channels/versions.list",
+   "platforms/channels/versions/releases.list"
+  ],
+  "youtube v3": [
+   "channels.list"
+  ]
+ },
+ "methods_used_loose_match": {
+  "accesscontextmanager v1": [
+   "accessPolicies.list",
+   "accessPolicies/accessLevels.create",
+   "accessPolicies/accessLevels.delete",
+   "accessPolicies/accessLevels.list",
+   "accessPolicies/accessLevels.patch",
+   "operations.get",
+   "permissions.list"
+  ],
+  "admin directory_v1": [
+   "customers/chrome/printers.batchDeletePrinters",
+   "customers/chrome/printers.get",
+   "customers/chrome/printers.patch",
+   "groups.get",
+   "groups.list",
+   "groups.patch",
+   "mobiledevices.action",
+   "mobiledevices.delete",
+   "mobiledevices.get",
+   "resources/calendars.delete",
+   "resources/calendars.get",
+   "resources/calendars.insert",
+   "resources/calendars.patch"
+  ],
+  "calendar-json v3": [
+   "acl.list",
+   "calendarList.get",
+   "calendarList.list",
+   "calendars.clear",
+   "calendars.delete",
+   "calendars.get",
+   "calendars.insert",
+   "calendars.patch",
+   "calendars.transferOwnership",
+   "events.delete",
+   "events.get",
+   "events.import",
+   "events.insert",
+   "events.instances",
+   "events.list",
+   "events.move",
+   "events.patch",
+   "settings.list"
+  ],
+  "chat v1": [
+   "spaces.delete",
+   "spaces.findDirectMessage",
+   "spaces.get",
+   "spaces.list",
+   "spaces.patch",
+   "spaces.search",
+   "spaces/members.create",
+   "spaces/members.delete",
+   "spaces/members.get",
+   "spaces/members.list",
+   "spaces/members.patch"
+  ],
+  "chromemanagement v1": [
+   "customers/certificateProvisioningProcesses/operations.get",
+   "customers/profiles.list",
+   "customers/profiles/commands.create",
+   "customers/profiles/commands.get",
+   "customers/profiles/commands.list",
+   "customers/telemetry/devices.get",
+   "customers/telemetry/devices.list",
+   "customers/telemetry/events.list"
+  ],
+  "classroom v1": [
+   "courses.get",
+   "courses/studentGroups.create",
+   "courses/studentGroups.delete",
+   "courses/studentGroups.list",
+   "courses/studentGroups.patch",
+   "courses/studentGroups/studentGroupMembers.list",
+   "courses/students.list",
+   "courses/teachers.list"
+  ],
+  "cloudchannel v1": [
+   "operations.get"
+  ],
+  "cloudidentity v1": [
+   "customers/userinvitations.cancel",
+   "customers/userinvitations.get",
+   "customers/userinvitations.isInvitableUser",
+   "customers/userinvitations.send",
+   "devices.create",
+   "devices.get",
+   "devices.list",
+   "devices/deviceUsers.get",
+   "devices/deviceUsers.list",
+   "devices/deviceUsers/clientStates.get",
+   "devices/deviceUsers/clientStates.list",
+   "devices/deviceUsers/clientStates.patch",
+   "groups.create",
+   "groups.get",
+   "groups.list",
+   "groups.patch",
+   "groups.search"
+  ],
+  "cloudidentity v1beta1": [
+   "customers/userinvitations.cancel",
+   "customers/userinvitations.get",
+   "customers/userinvitations.isInvitableUser",
+   "customers/userinvitations.send",
+   "devices.create",
+   "devices.get",
+   "devices.list",
+   "devices/deviceUsers.get",
+   "devices/deviceUsers.list",
+   "devices/deviceUsers/clientStates.get",
+   "devices/deviceUsers/clientStates.patch",
+   "groups.create",
+   "groups.get",
+   "groups.list",
+   "groups.patch",
+   "groups.search"
+  ],
+  "cloudresourcemanager v1": [
+   "operations.get",
+   "organizations.getIamPolicy",
+   "organizations.search",
+   "organizations.setIamPolicy",
+   "projects.create",
+   "projects.delete",
+   "projects.getAncestry",
+   "projects.getIamPolicy"
+  ],
+  "cloudresourcemanager v3": [
+   "folders.create",
+   "folders.search",
+   "operations.get",
+   "organizations.getIamPolicy",
+   "organizations.search",
+   "organizations.setIamPolicy",
+   "projects.create",
+   "projects.delete",
+   "projects.getIamPolicy"
+  ],
+  "datastudio v1": [
+   "assets.get",
+   "assets.getPermissions",
+   "assets.search",
+   "assets/permissions.addMembers",
+   "assets/permissions.revokeAllPermissions"
+  ],
+  "drive v2": [
+   "about.get",
+   "comments.list",
+   "drives.delete",
+   "drives.get",
+   "drives.hide",
+   "drives.list",
+   "drives.unhide",
+   "drives.update",
+   "files.copy",
+   "files.delete",
+   "files.get",
+   "files.list",
+   "files.listLabels",
+   "files.modifyLabels",
+   "files.update",
+   "permissions.delete",
+   "permissions.get",
+   "permissions.list",
+   "permissions.update",
+   "revisions.delete",
+   "revisions.get",
+   "revisions.list",
+   "revisions.update"
+  ],
+  "drive v3": [
+   "about.get",
+   "comments.list",
+   "drives.delete",
+   "drives.get",
+   "drives.hide",
+   "drives.list",
+   "drives.unhide",
+   "drives.update",
+   "files.copy",
+   "files.create",
+   "files.delete",
+   "files.get",
+   "files.list",
+   "files.listLabels",
+   "files.modifyLabels",
+   "files.update",
+   "operations.get",
+   "permissions.create",
+   "permissions.delete",
+   "permissions.get",
+   "permissions.list",
+   "permissions.update",
+   "revisions.delete",
+   "revisions.get",
+   "revisions.list",
+   "revisions.update"
+  ],
+  "drivelabels v2": [
+   "labels.get",
+   "labels.list",
+   "labels/permissions.batchDelete",
+   "labels/permissions.create",
+   "labels/permissions.delete",
+   "labels/permissions.list",
+   "labels/revisions/permissions.create",
+   "labels/revisions/permissions.delete",
+   "labels/revisions/permissions.list"
+  ],
+  "gmail v1": [
+   "users.getProfile",
+   "users/labels.get",
+   "users/labels.list",
+   "users/messages.get",
+   "users/messages.modify",
+   "users/messages.send",
+   "users/messages/attachments.get",
+   "users/settings/delegates.create",
+   "users/settings/delegates.delete",
+   "users/settings/filters.delete",
+   "users/settings/filters.get",
+   "users/threads.get"
+  ],
+  "groupssettings v1": [
+   "groups.get",
+   "groups.patch"
+  ],
+  "iam v1": [
+   "locations/workforcePools/operations.get",
+   "locations/workforcePools/providers/keys/operations.get",
+   "locations/workforcePools/providers/operations.get",
+   "locations/workforcePools/subjects/operations.get",
+   "projects/locations/workloadIdentityPools/namespaces/managedIdentities/operations.get",
+   "projects/locations/workloadIdentityPools/namespaces/managedIdentities/workloadSources/operations.get",
+   "projects/locations/workloadIdentityPools/namespaces/operations.get",
+   "projects/locations/workloadIdentityPools/operations.get",
+   "projects/locations/workloadIdentityPools/providers/keys/operations.get",
+   "projects/locations/workloadIdentityPools/providers/operations.get"
+  ],
+  "keep v1": [
+   "notes.delete",
+   "notes.get",
+   "notes/permissions.batchCreate",
+   "notes/permissions.batchDelete"
+  ],
+  "licensing v1": [
+   "licenseAssignments.delete",
+   "licenseAssignments.insert",
+   "licenseAssignments.patch"
+  ],
+  "meet v2": [
+   "spaces.get",
+   "spaces.patch",
+   "spaces/members.create",
+   "spaces/members.delete",
+   "spaces/members.get",
+   "spaces/members.list",
+   "spaces/members.patch"
+  ],
+  "meet v2beta": [
+   "spaces.get",
+   "spaces.patch"
+  ],
+  "servicemanagement v1": [
+   "operations.get"
+  ],
+  "serviceusage v1": [
+   "operations.get"
+  ],
+  "sheets v4": [
+   "spreadsheets.batchUpdate",
+   "spreadsheets.get",
+   "spreadsheets/values.append",
+   "spreadsheets/values.batchClear",
+   "spreadsheets/values.batchGet",
+   "spreadsheets/values.batchUpdate"
+  ],
+  "storage v1": [
+   "operations.get"
+  ],
+  "tagmanager v2": [
+   "accounts/containers/workspaces/folders.create"
+  ],
+  "tasks v1": [
+   "tasklists.delete",
+   "tasklists.get",
+   "tasklists.insert",
+   "tasklists.patch",
+   "tasks.clear",
+   "tasks.delete",
+   "tasks.get",
+   "tasks.insert",
+   "tasks.move",
+   "tasks.patch"
+  ],
+  "vault v1": [
+   "operations.get"
+  ],
+  "youtube v3": [
+   "comments.list"
+  ]
+ },
+ "missing_method": [],
+ "missing_required_parameters": [],
+ "missing_resource": [],
+ "possible_dynamic_mismatch_verify_manually": [
+  {
+   "apis": [
+    "gmail v1 /users/messages"
+   ],
+   "line": 76758,
+   "method": "create",
+   "path": "users/messages",
+   "scope": "_draftImportInsertMessage",
+   "var": "gmail",
+   "via": "callGAPI(dynamic)"
+  },
+  {
+   "apis": [
+    "gmail v1 /users/drafts"
+   ],
+   "line": 76762,
+   "method": "import",
+   "path": "users/drafts",
+   "scope": "_draftImportInsertMessage",
+   "var": "gmail",
+   "via": "callGAPI(dynamic)"
+  },
+  {
+   "apis": [
+    "gmail v1 /users/drafts"
+   ],
+   "line": 76762,
+   "method": "insert",
+   "path": "users/drafts",
+   "scope": "_draftImportInsertMessage",
+   "var": "gmail",
+   "via": "callGAPI(dynamic)"
+  }
+ ],
+ "stats": {
+  "calls_required_params_checked": 726,
+  "calls_with_parameters_checked": 765,
+  "calls_with_parameters_checked_loose": 286,
+  "direct_calls_checked": 32,
+  "getattr_calls_checked": 22,
+  "resolved": 815,
+  "resource_accessors_skipped": 24,
+  "unresolved": 317,
+  "unresolved_found_somewhere": 316,
+  "wrapper_calls_checked": 1061,
+  "wrapper_calls_dynamic_resolved": 19,
+  "wrapper_calls_not_analyzable": 41
+ },
+ "unresolved_not_found_anywhere": [
+  {
+   "line": 3005,
+   "method": "name",
+   "path": "",
+   "scope": "fdErrorMessage",
+   "var": "f",
+   "via": "getattr"
+  }
+ ]
+}

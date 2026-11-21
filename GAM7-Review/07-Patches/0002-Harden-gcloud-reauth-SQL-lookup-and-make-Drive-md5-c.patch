@@ -1,0 +1,60 @@
+From 6d547867fdf940a52f80bb1e679fa11d1044d55b Mon Sep 17 00:00:00 2001
+From: GAM7-Review <noreply@example.invalid>
+Date: Sat, 21 Nov 2026 04:16:53 +0000
+Subject: [PATCH 2/2] Harden gcloud reauth SQL lookup and make Drive md5 check
+ FIPS-safe
+
+runSqliteQuery now binds values with ? placeholders instead of pasting the
+admin email into the SQL text, and always closes the connection.
+hashlib.md5 is marked usedforsecurity=False because it only compares a
+file against Drive's md5Checksum (not a security use); without the flag
+Python raises ValueError on FIPS-enabled systems.
+---
+ src/gam/__init__.py | 16 ++++++++++------
+ 1 file changed, 10 insertions(+), 6 deletions(-)
+
+diff --git a/src/gam/__init__.py b/src/gam/__init__.py
+index 7c5ce45..1ebe2b0 100755
+--- a/src/gam/__init__.py
++++ b/src/gam/__init__.py
+@@ -5185,11 +5185,15 @@ def shortenURL(long_url):
+   except:
+     return long_url
+ 
+-def runSqliteQuery(db_file, query):
++def runSqliteQuery(db_file, query, params=()):
++  # params are bound by sqlite itself (use ? placeholders in query) so values are never pasted into the SQL text
+   conn = sqlite3.connect(db_file)
+-  curr = conn.cursor()
+-  curr.execute(query)
+-  return curr.fetchone()[0]
++  try:
++    curr = conn.cursor()
++    curr.execute(query, params)
++    return curr.fetchone()[0]
++  finally:
++    conn.close()
+ 
+ def refreshCredentialsWithReauth(credentials):
+   def gcloudError():
+@@ -5229,7 +5233,7 @@ def refreshCredentialsWithReauth(credentials):
+   token_file = f'{token_path}/access_tokens.db'
+   try:
+     credentials._rapt_token = runSqliteQuery(token_file,
+-            f'SELECT rapt_token FROM access_tokens WHERE account_id = "{admin_email}"')
++            'SELECT rapt_token FROM access_tokens WHERE account_id = ?', (admin_email,))
+   except TypeError:
+     gcloudError()
+   if not credentials._rapt_token:
+@@ -44504,7 +44508,7 @@ def md5MatchesFile(filename, expected_md5, j=0, jcount=0):
+   Act.Set(Act.VERIFY)
+   try:
+     f = openFile(filename, 'rb')
+-    hash_md5 = hashlib.md5()
++    hash_md5 = hashlib.md5(usedforsecurity=False) # integrity check against Drive's md5Checksum, not a security use; also works on FIPS-enabled systems
+     for chunk in iter(lambda: f.read(4096), b""):
+       hash_md5.update(chunk)
+     closeFile(f)
+-- 
+2.43.0
+
