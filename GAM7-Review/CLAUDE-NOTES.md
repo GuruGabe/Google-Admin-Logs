@@ -43,7 +43,9 @@ NOT DONE (explicit)
   not part of the request.
 * Could not read developers.google.com (blocked by sandbox network policy), so
   Email Audit API / Contacts v3 status is unverified.
-* Patches not offered upstream (no push access; user must decide).
+* Patches not offered upstream: add_repo(push) on GAM-team/GAM was refused (no
+  write access). Ready-to-paste issue text is in 10-Upstream-Issue-Drafts/;
+  the user posts them, or forks and sends a PR with 07-Patches.
 
 ## Where things live
 
