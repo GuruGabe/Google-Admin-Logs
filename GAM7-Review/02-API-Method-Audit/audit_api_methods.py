@@ -103,6 +103,13 @@ WRAPPER_OWN_KWARGS = {
     "pageArgsInBody",
 }
 
+# How many POSITIONAL arguments each wrapper really takes.  callGAPI is
+# (service, function); the paging wrappers are (service, function, items).
+# Anything extra silently lands in the NEXT parameter - for callGAPI that is
+# bailOnInternalError - which changes retry behavior without any error.
+MAX_POSITIONAL = {"callGAPI": 2, "callGAPIpages": 3,
+                  "yieldGAPIpages": 3, "callGAPIitems": 3}
+
 # Methods that exist on every googleapiclient Resource object and therefore are
 # never in a discovery document.  Calling them is always fine.
 CLIENT_BUILTINS = {
@@ -486,6 +493,7 @@ def main():
     not_analyzable = []       # method name is a variable we cannot resolve
     bad_params = []           # keyword arguments Google's method does not accept
     missing_required = []     # required parameters the call never supplies
+    stray_positional = []     # extra positional args that land in a wrapper option
     stats = defaultdict(int)  # counters for the summary
     used = defaultdict(set)   # (api,version) -> {'res/path.method'} GAM calls
                               # (STRICT: the variable's API was resolved)
@@ -635,6 +643,12 @@ def main():
             if id(node) in intermediate:
                 continue
             name = callee_name(node)
+            # Stray positional arguments (see MAX_POSITIONAL above).
+            if name in MAX_POSITIONAL and len(node.args) > MAX_POSITIONAL[name]:
+                stray_positional.append({
+                    "line": node.lineno, "scope": scope_name, "wrapper": name,
+                    "extra": [ast.unparse(a)[:40]
+                              for a in node.args[MAX_POSITIONAL[name]:]]})
             # Shape A: callGAPI(<chain>, 'method', ...)
             if name in WRAPPERS and len(node.args) >= 2:
                 chain = attr_chain(node.args[0])
@@ -716,6 +730,7 @@ def main():
         "possible_dynamic_mismatch_verify_manually": possible,
         "bad_parameters": bad_params,
         "missing_required_parameters": missing_required,
+        "stray_positional_arguments": stray_positional,
         "missing_method": missing,
         "missing_resource": missing_resource,
         "unresolved_not_found_anywhere": loose_missing,
@@ -760,6 +775,12 @@ def main():
         lines.append("  line %-6s in %-34s %s.%s  missing=%s  (%s)" % (
             row["line"], row["scope"], row["path"], row["method"],
             ",".join(row["missing"]), "; ".join(row["apis"])[:90]))
+    lines.append("")
+    lines.append("STRAY POSITIONAL ARGUMENTS (silently change retry options): %d" % len(stray_positional))
+    lines.append("-" * 60)
+    for row in stray_positional:
+        lines.append("  line %-6s in %-34s %s(... extra positional: %s)" % (
+            row["line"], row["scope"], row["wrapper"], ", ".join(row["extra"])))
     lines.append("")
     lines.append("DYNAMIC METHOD NAMES NEEDING MANUAL REVIEW: %d" % len(not_analyzable))
     lines.append("-" * 60)

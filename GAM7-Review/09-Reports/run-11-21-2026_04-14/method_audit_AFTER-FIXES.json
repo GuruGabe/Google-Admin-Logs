@@ -2,139 +2,139 @@
  "bad_parameters": [],
  "dynamic_method_needs_manual_review": [
   {
-   "line": 6079,
+   "line": 6083,
    "method_variable": "function",
    "scope": "callGAPIpages",
    "service": "service"
   },
   {
-   "line": 6110,
+   "line": 6114,
    "method_variable": "function",
    "scope": "yieldGAPIpages",
    "service": "service"
   },
   {
-   "line": 6144,
+   "line": 6148,
    "method_variable": "function",
    "scope": "callGAPIitems",
    "service": "service"
   },
   {
-   "line": 24118,
+   "line": 24122,
    "method_variable": "function",
    "scope": "_processPeopleContactPhotos",
    "service": "people.people()"
   },
   {
-   "line": 24154,
+   "line": 24158,
    "method_variable": "function",
    "scope": "_processPeopleContactPhotos",
    "service": "people.people()"
   },
   {
-   "line": 27782,
+   "line": 27786,
    "method_variable": "function",
    "scope": "updateChatAvailability",
    "service": "chat.users().availability()"
   },
   {
-   "line": 32262,
+   "line": 32266,
    "method_variable": "action",
    "scope": "_performCIDeviceAction",
    "service": "ci.devices()"
   },
   {
-   "line": 32459,
+   "line": 32463,
    "method_variable": "action",
    "scope": "doSyncCIDevices",
    "service": "ci.devices()"
   },
   {
-   "line": 32802,
+   "line": 32806,
    "method_variable": "action",
    "scope": "_performCIDeviceUserAction",
    "service": "ci.devices().deviceUsers()"
   },
   {
-   "line": 34056,
+   "line": 34060,
    "method_variable": "function",
    "scope": "doPrintShowChromeDeviceCounts",
    "service": "cm.customers().reports()"
   },
   {
-   "line": 42116,
+   "line": 42120,
    "method_variable": "function",
    "scope": "_processCalendarACLs",
    "service": "cal.acl()"
   },
   {
-   "line": 46520,
+   "line": 46524,
    "method_variable": "action",
    "scope": "doActionVaultMatter",
    "service": "v.matters()"
   },
   {
-   "line": 54681,
+   "line": 54685,
    "method_variable": "function",
    "scope": "acceptDeleteClassroomInvitations",
    "service": "ucroom.invitations()"
   },
   {
-   "line": 55325,
+   "line": 55329,
    "method_variable": "function",
    "scope": "doProcessCourseStudentGroupMembers",
    "service": "ocroom.courses().studentGroups().studentGroupMembers()"
   },
   {
-   "line": 55903,
+   "line": 55907,
    "method_variable": "function",
    "scope": "_processCalendarList",
    "service": "cal.calendarList()"
   },
   {
-   "line": 56007,
+   "line": 56011,
    "method_variable": "function",
    "scope": "_modifyRemoveCalendars",
    "service": "cal.calendars()"
   },
   {
-   "line": 66528,
+   "line": 66532,
    "method_variable": "function",
    "scope": "deleteDriveFile",
    "service": "drive.files()"
   },
   {
-   "line": 73831,
+   "line": 73835,
    "method_variable": "function",
    "scope": "_setShowProfile",
    "service": "cd.users()"
   },
   {
-   "line": 78867,
+   "line": 78871,
    "method_variable": "function",
    "scope": "_processForwardingAddress",
    "service": "gmail.users().settings().forwardingAddresses()"
   },
   {
-   "line": 79241,
+   "line": 79245,
    "method_variable": "function",
    "scope": "_processSendAs",
    "service": "gmail.users().settings().sendAs()"
   },
   {
-   "line": 79915,
+   "line": 79919,
    "method_variable": "function",
    "scope": "createUpdateCSEIdentity",
    "service": "gmail.users().settings().cse().identities()"
   },
   {
-   "line": 79948,
+   "line": 79952,
    "method_variable": "function",
    "scope": "processCSEIdentity",
    "service": "gmail.users().settings().cse().identities()"
   },
   {
-   "line": 80104,
+   "line": 80108,
    "method_variable": "function",
    "scope": "processCSEKeyPair",
    "service": "gmail.users().settings().cse().keypairs()"
@@ -963,7 +963,7 @@
    "apis": [
     "gmail v1 /users/messages"
    ],
-   "line": 76758,
+   "line": 76762,
    "method": "create",
    "path": "users/messages",
    "scope": "_draftImportInsertMessage",
@@ -974,7 +974,7 @@
    "apis": [
     "gmail v1 /users/drafts"
    ],
-   "line": 76762,
+   "line": 76766,
    "method": "import",
    "path": "users/drafts",
    "scope": "_draftImportInsertMessage",
@@ -985,7 +985,7 @@
    "apis": [
     "gmail v1 /users/drafts"
    ],
-   "line": 76762,
+   "line": 76766,
    "method": "insert",
    "path": "users/drafts",
    "scope": "_draftImportInsertMessage",
@@ -1007,6 +1007,24 @@
   "wrapper_calls_dynamic_resolved": 19,
   "wrapper_calls_not_analyzable": 41
  },
+ "stray_positional_arguments": [
+  {
+   "extra": [
+    "'chromeosdevices'"
+   ],
+   "line": 19246,
+   "scope": "doPrintOrgs",
+   "wrapper": "callGAPI"
+  },
+  {
+   "extra": [
+    "'resolvedPolicies'"
+   ],
+   "line": 30974,
+   "scope": "doDeleteChromePolicy",
+   "wrapper": "callGAPI"
+  }
+ ],
  "unresolved_not_found_anywhere": [
   {
    "line": 3005,

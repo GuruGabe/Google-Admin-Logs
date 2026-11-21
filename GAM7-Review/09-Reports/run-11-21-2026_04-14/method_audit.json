@@ -1036,6 +1036,24 @@
   "wrapper_calls_dynamic_resolved": 19,
   "wrapper_calls_not_analyzable": 41
  },
+ "stray_positional_arguments": [
+  {
+   "extra": [
+    "'chromeosdevices'"
+   ],
+   "line": 19242,
+   "scope": "doPrintOrgs",
+   "wrapper": "callGAPI"
+  },
+  {
+   "extra": [
+    "'resolvedPolicies'"
+   ],
+   "line": 30970,
+   "scope": "doDeleteChromePolicy",
+   "wrapper": "callGAPI"
+  }
+ ],
  "unresolved_not_found_anywhere": [
   {
    "line": 3005,

@@ -97,6 +97,9 @@ run_step "05 API coverage / deprecation / currency report" \
 run_step "06 OAuth scope audit" \
   python3 -I "$REVIEW/06-OAuth-Scope-Audit/audit_oauth_scopes.py" "$GAM_SRC" "$CACHE" "$OUT"
 
+run_step "11 Paged-items audit (silent empty-result bugs)" \
+  python3 -I "$REVIEW/11-Paged-Items-Audit/audit_paged_items.py" "$GAM_SRC" "$CACHE"
+
 echo
 echo "Finished.  Worst exit code: $worst   (0 clean, 1 findings, 2+ crash)"
 echo "Reports: $OUT"

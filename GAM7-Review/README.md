@@ -21,6 +21,8 @@ file explains how the tools work and how to run them again.
 | `07-Patches/` | Ready-to-apply fixes for GAM (two patch files). |
 | `08-Candidate-API-Details/` | Prints an outline of any Google API (for planning new GAM commands). |
 | `09-Reports/` | Saved results: the 11-21-2026 baseline run and the candidate-API outline. |
+| `10-Upstream-Issue-Drafts/` | Four ready-to-post GitHub issues for GAM-team/GAM, plus `LINKS.md` with one-tap pre-filled links. |
+| `11-Paged-Items-Audit/` | Finds list calls that would silently return nothing because a response field name is wrong. |
 
 Every `.py` file has a long comment at the top explaining its purpose and
 every step of the code is commented.
@@ -164,6 +166,9 @@ Sections in the report:
 * **UNRESOLVED ... FOUND IN NO API AT ALL** - could not tell which API the call
   belongs to, and no API has such a method. (On 11-21-2026 this was one false
   alarm: a plain `getattr(f, 'name')` on a file object.)
+* **STRAY POSITIONAL ARGUMENTS** - a call passes more unnamed arguments than
+  the GAM wrapper takes, so the extra one silently lands in a retry option.
+  Not a crash, but changes behavior (2 found on 11-21-2026).
 * **DYNAMIC METHOD NAMES NEEDING MANUAL REVIEW** - 23 call sites where the
   method name cannot be determined statically. A to-do list for a human.
 
@@ -214,6 +219,17 @@ Checks every permission string GAM asks for against Google's list. A scope
 that no longer exists makes authorization fail. The tool keeps a short list of
 scopes that are valid but missing from Google's documents (each with the
 reason). Anything else it prints deserves a look.
+
+### Tool 11 - silent empty-result bugs
+
+```
+python -I 11-Paged-Items-Audit\audit_paged_items.py C:\GAM-source\GAM\src C:\work\discovery_cache
+```
+
+GAM list commands name the field of Google's answer that holds the list
+(`callGAPIpages(cd.users(), 'list', 'users')`). A wrong name does not crash;
+the command just prints nothing. This checks every such name against Google's
+response description. Expected: `Suspicious items names: 0`.
 
 ### Tool 08 - outline of any Google API (for planning new GAM commands)
 

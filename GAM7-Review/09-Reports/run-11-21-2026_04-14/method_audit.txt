@@ -37,6 +37,11 @@ KEYWORD ARGUMENTS GOOGLE DOES NOT ACCEPT (TypeError at run time): 2
 REQUIRED PARAMETERS NEVER SUPPLIED (TypeError at run time): 0
 ------------------------------------------------------------
 
+STRAY POSITIONAL ARGUMENTS (silently change retry options): 2
+------------------------------------------------------------
+  line 19242  in doPrintOrgs                        callGAPI(... extra positional: 'chromeosdevices')
+  line 30970  in doDeleteChromePolicy               callGAPI(... extra positional: 'resolvedPolicies')
+
 DYNAMIC METHOD NAMES NEEDING MANUAL REVIEW: 23
 ------------------------------------------------------------
   line 6079   in callGAPIpages                            service  (method in variable 'function')

@@ -110,6 +110,11 @@ python -I "%REVIEW%\06-OAuth-Scope-Audit\audit_oauth_scopes.py" "%GAM_SRC%" "%CA
 call :track
 
 echo.
+echo === 11 Paged-items audit (silent empty-result bugs)
+python -I "%REVIEW%\11-Paged-Items-Audit\audit_paged_items.py" "%GAM_SRC%" "%CACHE%"
+call :track
+
+echo.
 echo Finished.  Worst exit code: %WORST%   (0 clean, 1 findings, 2+ crash)
 echo Reports: %OUT%
 exit /b %WORST%

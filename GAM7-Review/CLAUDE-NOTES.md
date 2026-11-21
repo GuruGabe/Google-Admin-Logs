@@ -104,6 +104,23 @@ Mistakes I made and corrected on the way (do not repeat):
   versions and produced fake "version not in directory" rows.  The tool now
   expects the full directory (`https://www.googleapis.com/discovery/v1/apis`).
 
+## Session 2 (11-21-2026, later)
+
+* User created fork GuruGabe/GAM and linked GitHub. Fork cloned at
+  /home/user/gam; branch `claude/gam7-audit-fixes` (2 commits = patches 0001,
+  0002) pushed to the fork. No PR opened yet (user to decide: 1 or 2 PRs).
+* GAM-team/GAM write access is impossible for this session (add_repo push
+  refused), so issues cannot be posted by me. Built `10-Upstream-Issue-Drafts/`
+  (4 drafts + LINKS.md with pre-filled new-issue URLs) for the user to submit.
+* New checks: stray positional args (in tool 02), dict-built kwargs (15 sites,
+  clean; one-off, not yet a tool), paged `items` names (tool 11; 217 checked,
+  clean; mutation-tested).  Resolved most of the 23 dynamic call sites by
+  hand: all valid (`getContactPhoto` is not called through callGAPI;
+  `trash/untrash` only exist as a function value that is never reached).
+* NEXT hunting ideas: turn the dict-kwargs check into a tool; check
+  throwReasons names against GAPI exception map; check `fields=` strings
+  against response schemas; check wiki command syntax vs parser.
+
 ## TODO next (priority order)
 
 1. Ask the user (when they are back, around 11-30-2026):

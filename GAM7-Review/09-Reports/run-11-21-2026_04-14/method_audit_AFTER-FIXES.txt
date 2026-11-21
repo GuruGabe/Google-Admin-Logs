@@ -21,9 +21,9 @@ RESOURCE MISSING FROM API (will crash when run): 0
 
 DYNAMIC (method held in a variable) - VERIFY MANUALLY, often a false positive: 3
 ------------------------------------------------------------
-  line 76758  in _draftImportInsertMessage                ['gmail v1 /users/messages'] -> users/messages.create
-  line 76762  in _draftImportInsertMessage                ['gmail v1 /users/drafts'] -> users/drafts.import
-  line 76762  in _draftImportInsertMessage                ['gmail v1 /users/drafts'] -> users/drafts.insert
+  line 76762  in _draftImportInsertMessage                ['gmail v1 /users/messages'] -> users/messages.create
+  line 76766  in _draftImportInsertMessage                ['gmail v1 /users/drafts'] -> users/drafts.import
+  line 76766  in _draftImportInsertMessage                ['gmail v1 /users/drafts'] -> users/drafts.insert
 
 UNRESOLVED CALLS FOUND IN NO API AT ALL: 1
 ------------------------------------------------------------
@@ -35,28 +35,33 @@ KEYWORD ARGUMENTS GOOGLE DOES NOT ACCEPT (TypeError at run time): 0
 REQUIRED PARAMETERS NEVER SUPPLIED (TypeError at run time): 0
 ------------------------------------------------------------
 
+STRAY POSITIONAL ARGUMENTS (silently change retry options): 2
+------------------------------------------------------------
+  line 19246  in doPrintOrgs                        callGAPI(... extra positional: 'chromeosdevices')
+  line 30974  in doDeleteChromePolicy               callGAPI(... extra positional: 'resolvedPolicies')
+
 DYNAMIC METHOD NAMES NEEDING MANUAL REVIEW: 23
 ------------------------------------------------------------
-  line 6079   in callGAPIpages                            service  (method in variable 'function')
-  line 6110   in yieldGAPIpages                           service  (method in variable 'function')
-  line 6144   in callGAPIitems                            service  (method in variable 'function')
-  line 24118  in _processPeopleContactPhotos              people.people()  (method in variable 'function')
-  line 24154  in _processPeopleContactPhotos              people.people()  (method in variable 'function')
-  line 27782  in updateChatAvailability                   chat.users().availability()  (method in variable 'function')
-  line 32262  in _performCIDeviceAction                   ci.devices()  (method in variable 'action')
-  line 32459  in doSyncCIDevices                          ci.devices()  (method in variable 'action')
-  line 32802  in _performCIDeviceUserAction               ci.devices().deviceUsers()  (method in variable 'action')
-  line 34056  in doPrintShowChromeDeviceCounts            cm.customers().reports()  (method in variable 'function')
-  line 42116  in _processCalendarACLs                     cal.acl()  (method in variable 'function')
-  line 46520  in doActionVaultMatter                      v.matters()  (method in variable 'action')
-  line 54681  in acceptDeleteClassroomInvitations         ucroom.invitations()  (method in variable 'function')
-  line 55325  in doProcessCourseStudentGroupMembers       ocroom.courses().studentGroups().studentGroupMembers()  (method in variable 'function')
-  line 55903  in _processCalendarList                     cal.calendarList()  (method in variable 'function')
-  line 56007  in _modifyRemoveCalendars                   cal.calendars()  (method in variable 'function')
-  line 66528  in deleteDriveFile                          drive.files()  (method in variable 'function')
-  line 73831  in _setShowProfile                          cd.users()  (method in variable 'function')
-  line 78867  in _processForwardingAddress                gmail.users().settings().forwardingAddresses()  (method in variable 'function')
-  line 79241  in _processSendAs                           gmail.users().settings().sendAs()  (method in variable 'function')
-  line 79915  in createUpdateCSEIdentity                  gmail.users().settings().cse().identities()  (method in variable 'function')
-  line 79948  in processCSEIdentity                       gmail.users().settings().cse().identities()  (method in variable 'function')
-  line 80104  in processCSEKeyPair                        gmail.users().settings().cse().keypairs()  (method in variable 'function')
+  line 6083   in callGAPIpages                            service  (method in variable 'function')
+  line 6114   in yieldGAPIpages                           service  (method in variable 'function')
+  line 6148   in callGAPIitems                            service  (method in variable 'function')
+  line 24122  in _processPeopleContactPhotos              people.people()  (method in variable 'function')
+  line 24158  in _processPeopleContactPhotos              people.people()  (method in variable 'function')
+  line 27786  in updateChatAvailability                   chat.users().availability()  (method in variable 'function')
+  line 32266  in _performCIDeviceAction                   ci.devices()  (method in variable 'action')
+  line 32463  in doSyncCIDevices                          ci.devices()  (method in variable 'action')
+  line 32806  in _performCIDeviceUserAction               ci.devices().deviceUsers()  (method in variable 'action')
+  line 34060  in doPrintShowChromeDeviceCounts            cm.customers().reports()  (method in variable 'function')
+  line 42120  in _processCalendarACLs                     cal.acl()  (method in variable 'function')
+  line 46524  in doActionVaultMatter                      v.matters()  (method in variable 'action')
+  line 54685  in acceptDeleteClassroomInvitations         ucroom.invitations()  (method in variable 'function')
+  line 55329  in doProcessCourseStudentGroupMembers       ocroom.courses().studentGroups().studentGroupMembers()  (method in variable 'function')
+  line 55907  in _processCalendarList                     cal.calendarList()  (method in variable 'function')
+  line 56011  in _modifyRemoveCalendars                   cal.calendars()  (method in variable 'function')
+  line 66532  in deleteDriveFile                          drive.files()  (method in variable 'function')
+  line 73835  in _setShowProfile                          cd.users()  (method in variable 'function')
+  line 78871  in _processForwardingAddress                gmail.users().settings().forwardingAddresses()  (method in variable 'function')
+  line 79245  in _processSendAs                           gmail.users().settings().sendAs()  (method in variable 'function')
+  line 79919  in createUpdateCSEIdentity                  gmail.users().settings().cse().identities()  (method in variable 'function')
+  line 79952  in processCSEIdentity                       gmail.users().settings().cse().identities()  (method in variable 'function')
+  line 80108  in processCSEKeyPair                        gmail.users().settings().cse().keypairs()  (method in variable 'function')
