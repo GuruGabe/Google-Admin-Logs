@@ -109,6 +109,11 @@ if [ -d "$GAM_SRC/../wiki" ]; then
     python3 -I "$REVIEW/13-Wiki-Link-Audit/audit_wiki_links.py" "$GAM_SRC/../wiki"
 fi
 
+if [ -d "$GAM_SRC/../wiki" ]; then
+  run_step "14 Config table and gam.cfg wiki audit" \
+    python3 -I "$REVIEW/14-Config-Audit/audit_config.py" "$GAM_SRC" "$GAM_SRC/../wiki"
+fi
+
 echo
 echo "Finished.  Worst exit code: $worst   (0 clean, 1 findings, 2+ crash)"
 echo "Reports: $OUT"

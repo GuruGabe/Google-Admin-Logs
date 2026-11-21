@@ -129,6 +129,15 @@ if exist "%GAM_SRC%\..\wiki\" (
 )
 
 echo.
+echo === 14 Config table and gam.cfg wiki audit
+if exist "%GAM_SRC%\..\wiki\" (
+  python -I "%REVIEW%\14-Config-Audit\audit_config.py" "%GAM_SRC%" "%GAM_SRC%\..\wiki"
+  call :track
+) else (
+  echo     wiki folder not found next to src - skipped
+)
+
+echo.
 echo Finished.  Worst exit code: %WORST%   (0 clean, 1 findings, 2+ crash)
 echo Reports: %OUT%
 exit /b %WORST%

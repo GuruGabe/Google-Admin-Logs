@@ -147,6 +147,10 @@ Mistakes I made and corrected on the way (do not repeat):
   claude/gam7-wiki-fixes (docs only; 2 typos + 9 links).  pr-6-wiki-fixes.md has PR text.
 * Never repeat personal names seen in git logs in outward text.
 
+* Tool 14 (config table + gam.cfg wiki) added; wiki branch has a 2nd commit (cfg defaults).
+  Config tables in code are self-consistent (143 settings, no bad defaults).
+  no_update_check is intentionally ignored by GAM (see GamUpdate.txt) - not a bug.
+
 ## TODO next (priority order)
 
 1. Ask the user (when they are back, around 11-30-2026):
