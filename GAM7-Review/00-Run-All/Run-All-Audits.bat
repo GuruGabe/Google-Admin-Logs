@@ -115,6 +115,11 @@ python -I "%REVIEW%\11-Paged-Items-Audit\audit_paged_items.py" "%GAM_SRC%" "%CAC
 call :track
 
 echo.
+echo === 12 Fields-mask audit (silent missing-data bugs)
+python -I "%REVIEW%\12-Fields-Mask-Audit\audit_fields_masks.py" "%GAM_SRC%" "%CACHE%"
+call :track
+
+echo.
 echo Finished.  Worst exit code: %WORST%   (0 clean, 1 findings, 2+ crash)
 echo Reports: %OUT%
 exit /b %WORST%

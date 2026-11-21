@@ -121,6 +121,23 @@ Mistakes I made and corrected on the way (do not repeat):
   throwReasons names against GAPI exception map; check `fields=` strings
   against response schemas; check wiki command syntax vs parser.
 
+## Session 2b (11-21-2026, later still)
+
+* Added tool 12 (fields masks; mutation-tested) and patch 0003 (name(fullName));
+  fork branch claude/gam7-audit-fixes now has 3 commits (pushed).
+* issue-5 draft + LINKS.md regenerate needed whenever drafts change (script in
+  session history: percent-encode title/body into
+  https://github.com/GAM-team/GAM/issues/new?title=..&body=..).
+* Throw-vs-catch check is only a LEAD (09-Reports/throw-vs-catch-leads...):
+  ProcessGAMCommand prints a traceback for uncaught GAPI errors except
+  permissionDenied/accessNotConfigured, but GAM remaps raw reasons in
+  checkGAPIError, so real impact needs live testing.
+* Test harness trick (callGAPI without credentials): build a client with
+  googleapiclient.discovery.build_from_document + HttpMockSequence, then set
+  gam.GM.Globals[EXTRA_ARGS_LIST]=[] and gam.GC.Values.update({API_CALLS_RATE_CHECK:False,
+  RETRY_API_SERVICE_NOT_AVAILABLE:False, API_CALLS_TRIES_LIMIT:3,
+  BAIL_ON_INTERNAL_ERROR_TRIES:2, DEBUG_LEVEL:0}).
+
 ## TODO next (priority order)
 
 1. Ask the user (when they are back, around 11-30-2026):

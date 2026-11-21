@@ -23,6 +23,7 @@ file explains how the tools work and how to run them again.
 | `09-Reports/` | Saved results: the 11-21-2026 baseline run and the candidate-API outline. |
 | `10-Upstream-Issue-Drafts/` | Four ready-to-post GitHub issues for GAM-team/GAM, plus `LINKS.md` with one-tap pre-filled links. |
 | `11-Paged-Items-Audit/` | Finds list calls that would silently return nothing because a response field name is wrong. |
+| `12-Fields-Mask-Audit/` | Checks every literal `fields=` string against Google's response schema (silent missing-data bugs). |
 
 Every `.py` file has a long comment at the top explaining its purpose and
 every step of the code is commented.
@@ -231,6 +232,17 @@ GAM list commands name the field of Google's answer that holds the list
 the command just prints nothing. This checks every such name against Google's
 response description. Expected: `Suspicious items names: 0`.
 
+### Tool 12 - `fields=` strings
+
+```
+python -I 12-Fields-Mask-Audit\audit_fields_masks.py C:\GAM-source\GAM\src C:\work\discovery_cache
+```
+
+Calls pass `fields='users(primaryEmail,name(fullName))'` to say which parts of
+the answer to return. A wrong name or wrong syntax (a dot instead of `/` or
+parentheses) can make data silently go missing. 805 strings are built at run
+time and cannot be checked; the tool says how many it skipped.
+
 ### Tool 08 - outline of any Google API (for planning new GAM commands)
 
 ```
@@ -245,7 +257,11 @@ and scopes.
 
 ## 6. Applying the fixes in `07-Patches`
 
-Two patch files, to be applied **in order** to a GAM **source** checkout:
+Three patch files (0001, 0002, 0003), to be applied **in order** to a GAM **source**
+checkout. 0001 fixes the two crashes, 0002 is security hardening, 0003 fixes a
+probable silent bug. The commands for 0001 and 0002 are shown; repeat the same
+two lines for 0003. The same three commits are on the fork branch
+`claude/gam7-audit-fixes` of `GuruGabe/GAM`:
 
 ```
 cd C:\GAM-source\GAM

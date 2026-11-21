@@ -100,6 +100,9 @@ run_step "06 OAuth scope audit" \
 run_step "11 Paged-items audit (silent empty-result bugs)" \
   python3 -I "$REVIEW/11-Paged-Items-Audit/audit_paged_items.py" "$GAM_SRC" "$CACHE"
 
+run_step "12 Fields-mask audit (silent missing-data bugs)" \
+  python3 -I "$REVIEW/12-Fields-Mask-Audit/audit_fields_masks.py" "$GAM_SRC" "$CACHE"
+
 echo
 echo "Finished.  Worst exit code: $worst   (0 clean, 1 findings, 2+ crash)"
 echo "Reports: $OUT"

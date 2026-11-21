@@ -1,0 +1,34 @@
+From d43fa34f107c9a02a8d45a53c2e3ad689208ec75 Mon Sep 17 00:00:00 2001
+From: GAM7-Review <noreply@example.invalid>
+Date: Sat, 21 Nov 2026 05:00:48 +0000
+Subject: [PATCH 3/3] Use valid field mask name(fullName) in printDriveActivity
+ user lookup
+
+fields='primaryEmail,name.fullName' uses a dot, which is not part of Google's
+partial-response syntax (a/b or a(b)). The rest of GAM already writes
+name(fullName) for the same lookup (e.g. lines near 24515 and 52013). If
+Google rejects the dotted form, the 400 is swallowed by the badRequest handler
+and every user in Drive Activity output shows as uid:<id>/Unknown.
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01QyFs2iuhvTXse4kSDR238X
+---
+ src/gam/__init__.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/gam/__init__.py b/src/gam/__init__.py
+index 1ebe2b0..b8d3a3d 100755
+--- a/src/gam/__init__.py
++++ b/src/gam/__init__.py
+@@ -58643,7 +58643,7 @@ def printDriveActivity(users):
+       try:
+         result = callGAPI(cd.users(), 'get',
+                           throwReasons=GAPI.USER_GET_THROW_REASONS+[GAPI.INVALID_INPUT],
+-                          userKey=userId, fields='primaryEmail,name.fullName')
++                          userKey=userId, fields='primaryEmail,name(fullName)')
+         entry = (result['primaryEmail'], result['name']['fullName'])
+       except (GAPI.userNotFound, GAPI.domainNotFound, GAPI.domainCannotUseApis, GAPI.forbidden,
+               GAPI.badRequest, GAPI.backendError, GAPI.systemError, GAPI.invalidInput):
+-- 
+2.43.0
+
